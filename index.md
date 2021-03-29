@@ -5,9 +5,25 @@ badges:
 ---
 # LED Shroud
 
-![preview](assets/universal_led_shroud.png)
+![preview](assets/__ALL__.png)
 
 For those willing to put a little bit of bling on their printers: shroud with built-in Neopixel. When it's off it looks like just any other regular shroud. With LED on, EVA logo appears. As the intended LED is Neopixel, imagination is the only limit as to what it can do (printer status, heating progress, print progress etc etc)
+
+## Versions
+
+### Regular
+
+<img src="assets/regular.png" width="350" align="left" />
+
+This is the standard version, mounted to the front with 4 screws - like the universal shroud.
+
+<br style="clear: both;"/>
+
+### Magnetic
+
+<img src="assets/magnetic.png" width="350" align="left" />
+
+With this version screws are holding the fan and the shroud is attached using small round 5x2 mm magnets.
 
 
 ## Wiring
@@ -28,6 +44,22 @@ As there are multiple boards and firmware flavors, providing instructions for ea
             -Kevin
 
         https://github.com/KevinOConnor/klipper/issues/3366#issuecomment-699749451
+
+=== "SKR GTR"
+    GTR board has dedicated Neopixel pins, so hooking up is dead easy.
+
+    ![GTR pins](assets/SKR_GTR-pins.png)
+
+    !!! abstract "Data pin"
+        - `PF13` 
+
+=== "SKR V1.4"
+    V1.4 board has dedicated Neopixel pins, so hooking up is dead easy.
+
+    ![V1.4 pins](assets/SKR_14-pins.png)
+
+    !!! abstract "Data pin"
+        - `P1.24` 
 
 === "SKR Pro 1.x"
     Having analyzed schematics of the other SKR boards, that have dedicated Neopixel headers, and comparing with this one, pins were selected that connect to the same microcontroller ports. There may also be other pins that work, but those were tested and confirmed to work.
@@ -270,6 +302,11 @@ In this section you'll find example config and macros for lighting effects (wher
 
 ## BOM
 
+=== "Regular"
+
 {{ bom("addons/led_shroud/bom/regular.csv", 4) }}
 
+=== "Magnetic"
+
+{{ bom("addons/led_shroud/bom/magnetic.csv", 4) }}
 
